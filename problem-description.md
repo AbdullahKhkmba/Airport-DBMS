@@ -1,6 +1,7 @@
-- **Airports** are identified by a AID, name, country, and city must be recorded.
+- **Airports** are identified by a AID, airport name, country, and city must be recorded.
 - **Aircrafts** are identified by a AcID, type, capacity, and Mfg date must be recorded.
-- **Airlines** are identified by ALID, and name must be recorded.
+- **Aircraft_type** are identified by type name, capacity must be recorded.
+- **Airlines** are identified by ALID, and airline name must be recorded.
 - **Flights** are identified by FID, flight date, departure time, arrival time, and status (e.g., Scheduled, Departed, Arrived, Cancelled) must be recorded. 
 - **Tickets** contain information about TID, seat number, price, status (e.g Issued, Used, Cancelled), and fare class (e.g., Economy, Business, First Class).
 - **Passengers** are identified by PID, first name, last name, address, gender, age, nationality, passport number, and phone.
@@ -9,5 +10,5 @@
 - Each flight is **executed** by one aircraft, while one aircraft can be responsible of many flights at different dates.
 - Every airline is **has** for many flight, but each flight belong to only one airline.
 - Each flight **carries** many passengers.
-- Each flight **has** many tickets that can be booked by.
 - Every passenger can **book** many tickets for several flights in different dates, while one ticket is owned only by one passenger.
+- Every passenger can **cancel** many tickets for several flights in different dates, while one ticket is owned only by one passenger.
