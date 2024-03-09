@@ -1,14 +1,12 @@
-- **Airports** are identified by a AID, airport name, country, and city must be recorded.
-- **Aircrafts** are identified by a AcID, type, capacity, and Mfg date must be recorded.
-- **Aircraft_type** are identified by type name, capacity must be recorded.
-- **Airlines** are identified by ALID, and airline name must be recorded.
-- **Flights** are identified by FID, flight date, departure time, arrival time, and status (e.g., Scheduled, Departed, Arrived, Cancelled) must be recorded. 
-- **Tickets** contain information about TID, seat number, price, status (e.g Issued, Used, Cancelled), and fare class (e.g., Economy, Business, First Class).
-- **Passengers** are identified by PID, first name, last name, address, gender, age, nationality, passport number, and phone.
-- Every flight **originates** from one airport and **ends** at one airport, while one airport can be the origin and destination of many flights.
-- Each aircraft is **owned** by one airline company, while one airline company can have multiple aircrafts in its fleet.
-- Each flight is **executed** by one aircraft, while one aircraft can be responsible of many flights at different dates.
-- Every airline is **has** for many flight, but each flight belong to only one airline.
-- Each flight **carries** many passengers.
-- Every passenger can **book** many tickets for several flights in different dates, while one ticket is owned only by one passenger.
-- Every passenger can **cancel** many tickets for several flights in different dates, while one ticket is owned only by one passenger.
+The goal is to allow passengers to book tickets on flights. Each flight goes from Airport X to Airport Y using an aircraft model Z. Each airport has a name and a location. Each model has features like screens and Wi-Fi.
+We need to:
+-	List passengers on a particular flight.
+-	List all minor passengers on a particular flight.
+-	List passengers who traveled from airport X to airport Y on some time interval.
+-	Count the number of empty seats on a flight.
+-	List seat numbers of empty economy or first-class seats on a flight.
+-	List all flights from airport X to airport Y ordered by price, number of stops or estimated time (journeys are included even if there is no direct flight from X to Y).
+-	Listed flights might be filtered by the presence of Wi-Fi or any other feature.
+-	Count the number of flights that used airport X for landing or departure in a given time interval or in general.
+-	Count the number of number of flights an aircraft did in a given time interval or in general.
+
