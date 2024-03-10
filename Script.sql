@@ -51,6 +51,7 @@ CREATE TABLE Passenger (
 );
 
 -- the problem here is that the froiegn key must reference a unique value
+/*
 CREATE TABLE Book(
     nationality VARCHAR2(20) REFERENCES Passenger(nationality, passport_no),
     passport_no VARCHAR2(20) REFERENCES Passenger(passport_no),
@@ -66,6 +67,7 @@ CREATE TABLE Phone_number (
   passport_no VARCHAR2(20) PRIMARY KEY REFERENCES Passenger(passport_no),
   phone_number VARCHAR2(15) PRIMARY KEY
 );
+*/
 
 
 
