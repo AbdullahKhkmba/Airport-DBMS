@@ -13,7 +13,7 @@ WHERE T1.nationality = T2.nationality
     AND T2.FID = 'F1'
     AND T1.age < 18;
 
--- List all minor passengers on a particular flight.
+-- List passengers who traveled from airport X to airport Y on some time interval.
 SELECT T1.Fname, T1.Lname 
 FROM passenger T1, book T2, Flight T3
 WHERE T1.nationality = T2.nationality 
