@@ -2,8 +2,8 @@
 DROP TABLE Airport;
 DROP TABLE Flight;
 DROP TABLE Aircraft;
-DROP TABLE Passenger;
-DROP TABLE Book;
+DROP TABLE Passenger; 
+DROP TABLE Book; 
 DROP TABLE phone_number;
 */
 
@@ -50,24 +50,24 @@ CREATE TABLE Passenger (
   PRIMARY KEY (nationality, passport_no)
 );
 
--- the problem here is that the froiegn key must reference a unique value
-/*
 CREATE TABLE Book(
-    nationality VARCHAR2(20) REFERENCES Passenger(nationality, passport_no),
-    passport_no VARCHAR2(20) REFERENCES Passenger(passport_no),
+    nationality VARCHAR2(20),
+    passport_no VARCHAR2(20),
     FID VARCHAR2(20) REFERENCES Flight(FID),
     price NUMBER(5, 3),
     fare_class VARCHAR2(1),
     seat_number VARCHAR2(4),
-    PRIMARY KEY (nationality, passport_no, FID)
+    PRIMARY KEY (nationality, passport_no, FID),
+    FOREIGN KEY (nationality, passport_no) REFERENCES Passenger(nationality, passport_no)
 );
 
 CREATE TABLE Phone_number (
-  nationality VARCHAR2(20) PRIMARY KEY REFERENCES Passenger(nationality),
-  passport_no VARCHAR2(20) PRIMARY KEY REFERENCES Passenger(passport_no),
-  phone_number VARCHAR2(15) PRIMARY KEY
+  nationality VARCHAR2(20),
+  passport_no VARCHAR2(20),
+  phone_number VARCHAR2(15),
+  PRIMARY KEY (nationality, passport_no, phone_number),
+  FOREIGN KEY (nationality, passport_no) REFERENCES Passenger(nationality, passport_no)
 );
-*/
 
 
 
