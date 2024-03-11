@@ -1,9 +1,9 @@
 /*
-DROP TABLE Airport;
+DROP TABLE Book;
+DROP TABLE phone_number;
 DROP TABLE Flight;
-DROP TABLE Aircraft;
 DROP TABLE Passenger; 
-DROP TABLE Book; 
+DROP TABLE Airport; 
 DROP TABLE phone_number;
 */
 
@@ -23,18 +23,17 @@ CREATE TABLE Flight (
   fstatus VARCHAR2(10),
   estimated_time NUMBER(4),
   AID_origin VARCHAR2(4) REFERENCES Airport(AID),
-  AID_destination VARCHAR2(4) REFERENCES Airport(AID)
+  AID_destination VARCHAR2(4) REFERENCES Airport(AID),
+  ArID VARCHAR2(12) REFERENCES Aircraft(ArID),
 );
 
 CREATE TABLE Aircraft (
-  ArID VARCHAR2(12),
-  FID VARCHAR2(20) REFERENCES Flight(FID),
+  ArID VARCHAR2(12) PRIMARY KEY,
   model_name VARCHAR2(32) NOT NULL,
   economy_class_capacity NUMBER(3) NOT NULL,
   first_class_capacity NUMBER(3) NOT NULL,
   screen VARCHAR2(1) NOT NULL CHECK (screen IN ('Y', 'N')),
   wifi VARCHAR2(1) NOT NULL CHECK (wifi IN ('Y', 'N')),
-  PRIMARY KEY(ArID, FID)
 );
 
 CREATE TABLE Passenger (
