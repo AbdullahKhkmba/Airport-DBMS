@@ -24,6 +24,12 @@ WHERE T1.nationality = T2.nationality
     AND T3.departure_time BETWEEN '10-march-2024' AND '16-march-2024'
     AND T3.arrival_time BETWEEN '10-march-2024' AND '16-march-2024';
 
+--List seat numbers of empty economy or first-class seats on a flight.
+-- TODO
+
+--List all flights from airport X to airport Y ordered by price, number of stops or estimated time (journeys are included even if there is no direct flight from X to Y).
+-- TODO
+
 -- Count number of empty seats on a flight
 SELECT economy_class_capacity + first_class_capacity - (SELECT COUNT(FID) FROM Book WHERE FID = 'F1') AS Number_of_empty_seats
 FROM Aircraft WHERE ArID = (SElECT ArID from flight where FID = 'F1');
