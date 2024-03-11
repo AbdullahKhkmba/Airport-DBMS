@@ -2,12 +2,16 @@
 INSERT INTO Airport VALUES('A1', 'cairo internatinal airport', 'Egypt', 'Cairo');
 INSERT INTO Airport VALUES('A2', 'J.F.K internatinal airport', 'USA', 'Washington');
 
--- Insert values in flight table
+-- Insert values in Aircraft table
+INSERT INTO Aircraft VALUES('Ar1', 'Boieng 777', 200, 50, 'Y', 'Y');
+INSERT INTO Aircraft VALUES('Ar2', 'Airbus 123', 100, 25, 'N', 'N');
+INSERT INTO Aircraft VALUES('Ar3', 'Boieng 100', 150, 40, 'Y', 'N');
+
+-- Insert values in Flight table
 INSERT INTO Flight VALUES('F1', '10-march-2024', '11-march-2024', 'Scheduled',400, 'A1', 'A2', 'Ar1');
 INSERT INTO Flight VALUES('F2', '12-march-2024', '13-march-2024', 'Scheduled',400, 'A2', 'A1', 'Ar2');
 INSERT INTO Flight VALUES('F3', '15-march-2024', '16-march-2024', 'Scheduled',400, 'A1', 'A2', 'Ar3');
 INSERT INTO Flight VALUES('F4', '19-march-2024', '20-march-2024', 'Scheduled',90, 'A1', 'A2', 'Ar1');
-
 
 -- Insert values in Passenger table
 INSERT INTO passenger VALUES('Egyption','A2002','Ahmed', 'Aly', 24, 'M', 'cairo', 'Abbas al-akad', '40');
@@ -31,7 +35,3 @@ INSERT INTO Book VALUES('Astralian', 'A2008', 'F1', 50, 'E', '2R');
 INSERT INTO Book VALUES('Algerian', 'A2009', 'F2', 50, 'E', '2W');
 INSERT INTO Book VALUES('Egyption', 'A2010', 'F3', 50, 'E', '2T');
 
--- Insert values in Aircraft table
-INSERT INTO Aircraft VALUES('Ar1', 'Boieng 777', 200, 50, 'Y', 'Y');
-INSERT INTO Aircraft VALUES('Ar2', 'Airbus 123', 100, 25, 'N', 'N');
-INSERT INTO Aircraft VALUES('Ar3', 'Boieng 100', 150, 40, 'Y', 'N');
