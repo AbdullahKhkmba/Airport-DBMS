@@ -23,3 +23,19 @@ WHERE T1.nationality = T2.nationality
     AND T3.AID_destination = 'A2'
     AND T3.departure_time BETWEEN '10-march-2024' AND '16-march-2024'
     AND T3.arrival_time BETWEEN '10-march-2024' AND '16-march-2024';
+
+-- Count number of empty seats on a flight
+SELECT economy_class_capacity + first_class_capacity - (SELECT COUNT(FID) FROM Book WHERE FID = 'F1') AS Number_of_empty_seats
+FROM Aircraft WHERE ArID = (SElECT ArID from flight where FID = 'F1');
+
+-- Listed flights might be filtered by the presence of Wi-Fi or any other feature.
+SELECT T1.FID AS Flights_with_wifi
+FROM Flight T1, Aircraft T2
+WHERE T1.ArID = T2.ArID AND T2.wifi = 'Y';
+
+-- Count the number of flights that used airport X for landing or departure in a given time interval or in general.
+SELECT COUNT(FID)
+FROM Flight
+WHERE AID_origin = 'A1' OR AID_destination = 'A1'
+    AND departure_time BETWEEN '10-march-2024' AND '16-march-2024'
+    AND arrival_time BETWEEN '10-march-2024' AND '16-march-2024';
