@@ -14,6 +14,15 @@ CREATE TABLE Airport(
     city VARCHAR2(32) NOT NULL
 );
 
+CREATE TABLE Aircraft (
+  ArID VARCHAR2(12) PRIMARY KEY,
+  model_name VARCHAR2(32) NOT NULL,
+  economy_class_capacity NUMBER(3) NOT NULL,
+  first_class_capacity NUMBER(3) NOT NULL,
+  screen VARCHAR2(1) NOT NULL CHECK (screen IN ('Y', 'N')),
+  wifi VARCHAR2(1) NOT NULL CHECK (wifi IN ('Y', 'N'))
+);
+
 -- change the attribute 'status' to 'fstatus' 
 -- because status is a reseverd keyword by sql
 CREATE TABLE Flight (
@@ -24,16 +33,7 @@ CREATE TABLE Flight (
   estimated_time NUMBER(4),
   AID_origin VARCHAR2(4) REFERENCES Airport(AID),
   AID_destination VARCHAR2(4) REFERENCES Airport(AID),
-  ArID VARCHAR2(12) REFERENCES Aircraft(ArID),
-);
-
-CREATE TABLE Aircraft (
-  ArID VARCHAR2(12) PRIMARY KEY,
-  model_name VARCHAR2(32) NOT NULL,
-  economy_class_capacity NUMBER(3) NOT NULL,
-  first_class_capacity NUMBER(3) NOT NULL,
-  screen VARCHAR2(1) NOT NULL CHECK (screen IN ('Y', 'N')),
-  wifi VARCHAR2(1) NOT NULL CHECK (wifi IN ('Y', 'N')),
+  ArID VARCHAR2(12) REFERENCES Aircraft(ArID)
 );
 
 CREATE TABLE Passenger (
