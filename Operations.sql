@@ -45,3 +45,10 @@ FROM Flight
 WHERE AID_origin = 'A1' OR AID_destination = 'A1'
     AND departure_time BETWEEN '10-march-2024' AND '16-march-2024'
     AND arrival_time BETWEEN '10-march-2024' AND '16-march-2024';
+
+-- Count number of flights an aircraft did in a given time interval or in general.
+SELECT COUNT(FID)
+FROM Flight
+WHERE ArID = 'Ar1'
+    AND departure_time BETWEEN '10-march-2024' AND '20-march-2024'
+    AND arrival_time BETWEEN '10-march-2024' AND '20-march-2024';
