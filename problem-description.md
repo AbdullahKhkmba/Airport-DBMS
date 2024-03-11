@@ -8,5 +8,5 @@ We need to:
 -	List all flights from airport X to airport Y ordered by price, number of stops or estimated time (journeys are included even if there is no direct flight from X to Y).
 -	Listed flights might be filtered by the presence of Wi-Fi or any other feature.
 -	Count the number of flights that used airport X for landing or departure in a given time interval or in general.
--	Count the number of number of flights an aircraft did in a given time interval or in general.
+-	Count number of flights an aircraft did in a given time interval or in general.
 
