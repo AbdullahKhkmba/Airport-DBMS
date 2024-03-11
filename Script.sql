@@ -4,7 +4,7 @@ DROP TABLE phone_number;
 DROP TABLE Flight;
 DROP TABLE Passenger; 
 DROP TABLE Airport; 
-DROP TABLE phone_number;
+DROP TABLE Aircraft;
 */
 
 CREATE TABLE Airport(
