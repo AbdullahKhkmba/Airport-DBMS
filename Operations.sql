@@ -13,7 +13,7 @@ WHERE T1.nationality = T2.nationality
     AND T2.FID = 'F1'
     AND T1.age < 18;
 
--- List all minor passengers on a particular flight.
+-- List passengers who traveled from airport X to airport Y on some time interval.
 SELECT T1.Fname, T1.Lname 
 FROM passenger T1, book T2, Flight T3
 WHERE T1.nationality = T2.nationality 
@@ -37,12 +37,13 @@ FROM Aircraft WHERE ArID = (SElECT ArID from flight where FID = 'F1');
 -- Listed flights might be filtered by the presence of Wi-Fi or any other feature.
 SELECT T1.FID AS Flights_with_wifi
 FROM Flight T1, Aircraft T2
-WHERE T1.ArID = T2.ArID AND T2.wifi = 'Y';
+WHERE T1.ArID = T2.ArID 
+    AND T2.wifi = 'Y';
 
 -- Count the number of flights that used airport X for landing or departure in a given time interval or in general.
 SELECT COUNT(FID)
 FROM Flight
-WHERE AID_origin = 'A1' OR AID_destination = 'A1'
+WHERE (AID_origin = 'A1' OR AID_destination = 'A1')
     AND departure_time BETWEEN '10-march-2024' AND '16-march-2024'
     AND arrival_time BETWEEN '10-march-2024' AND '16-march-2024';
 
