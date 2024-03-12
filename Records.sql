@@ -8,10 +8,10 @@ INSERT INTO Aircraft VALUES('Ar2', 'Airbus 123', 100, 25, 'N', 'N');
 INSERT INTO Aircraft VALUES('Ar3', 'Boieng 100', 150, 40, 'Y', 'N');
 
 -- Insert values in Flight table
-INSERT INTO Flight VALUES('F1', '10-march-2024 03:20:50', '11-march-2024 11:20:50', 'Scheduled',400, 50, 'A1', 'A2', 'Ar1');
-INSERT INTO Flight VALUES('F2', '12-march-2024 20:20:50', '13-march-2024 12:20:50', 'Scheduled',400, 100, 'A2', 'A1', 'Ar2');
-INSERT INTO Flight VALUES('F3', '15-march-2024 21:20:50', '16-march-2024 16:20:50', 'Scheduled',400, 150, 'A1', 'A2', 'Ar3');
-INSERT INTO Flight VALUES('F4', '19-march-2024 17:20:50', '20-march-2024 01:20:50', 'Scheduled',90, 80, 'A1', 'A2', 'Ar1');
+INSERT INTO Flight VALUES('F1', '10-march-2024 03:20:50 AM', '11-march-2024 11:20:50 AM', 'Scheduled',400, 50, 'A1', 'A2', 'Ar1');
+INSERT INTO Flight VALUES('F2', '12-march-2024 20:20:50 AM', '11-march-2024 12:20:50 AM', 'Scheduled',400, 100, 'A2', 'A1', 'Ar2');
+INSERT INTO Flight VALUES('F3', '15-march-2024 09:20:50 PM', '16-march-2024 04:20:50 PM', 'Scheduled',400, 150, 'A1', 'A2', 'Ar3');
+INSERT INTO Flight VALUES('F4', '19-march-2024 05:20:50 PM', '20-march-2024 01:20:50 AM', 'Scheduled',90, 80, 'A1', 'A2', 'Ar1');
 
 -- Insert values in Passenger table
 INSERT INTO passenger VALUES('Egyption','A2002','Ahmed', 'Aly', 24, 'M', 'cairo', 'Abbas al-akad', '40');
