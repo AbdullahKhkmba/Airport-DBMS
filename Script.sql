@@ -31,7 +31,7 @@ CREATE TABLE Flight (
   arrival_time DATE,
   fstatus VARCHAR2(10),
   estimated_time NUMBER(4),
-  price NUMBER(5, 3),
+  price NUMBER(5, 2),
   AID_origin VARCHAR2(4) REFERENCES Airport(AID),
   AID_destination VARCHAR2(4) REFERENCES Airport(AID),
   ArID VARCHAR2(12) REFERENCES Aircraft(ArID)
