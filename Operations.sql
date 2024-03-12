@@ -21,8 +21,8 @@ WHERE T1.nationality = T2.nationality
     AND T2.FID = T3.FID
     AND T3.AID_origin = 'A1'
     AND T3.AID_destination = 'A2'
-    AND T3.departure_time BETWEEN '10-march-2024' AND '16-march-2024'
-    AND T3.arrival_time BETWEEN '10-march-2024' AND '16-march-2024';
+    AND T3.departure_time BETWEEN '10-march-2024 00:00:00' AND '16-march-2024 23:59:00'
+    AND T3.arrival_time BETWEEN '10-march-2024 00:00:00' AND '16-march-2024 23:59:00';
 
 --List seat numbers of empty economy or first-class seats on a flight.
 -- TODO
@@ -47,12 +47,12 @@ WHERE T1.ArID = T2.ArID
 SELECT COUNT(FID)
 FROM Flight
 WHERE (AID_origin = 'A1' OR AID_destination = 'A1')
-    AND departure_time BETWEEN '10-march-2024' AND '16-march-2024'
-    AND arrival_time BETWEEN '10-march-2024' AND '16-march-2024';
+    AND departure_time BETWEEN '10-march-2024 00:00:00' AND '16-march-2024 23:59:00'
+    AND arrival_time BETWEEN '10-march-2024 00:00:00' AND '16-march-2024 23:59:00';
 
 -- Count number of flights an aircraft did in a given time interval or in general.
 SELECT COUNT(FID)
 FROM Flight
 WHERE ArID = 'Ar1'
-    AND departure_time BETWEEN '10-march-2024' AND '20-march-2024'
-    AND arrival_time BETWEEN '10-march-2024' AND '20-march-2024';
+    AND departure_time BETWEEN '10-march-2024 00:00:00' AND '16-march-2024 23:59:00'
+    AND arrival_time BETWEEN '10-march-2024 00:00:00' AND '16-march-2024 23:59:00';
