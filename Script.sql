@@ -27,8 +27,8 @@ CREATE TABLE Aircraft (
 -- because status is a reseverd keyword by sql
 CREATE TABLE Flight (
   FID VARCHAR2(20) PRIMARY KEY,
-  departure_time TIMESTAMP,
-  arrival_time TIMESTAMP,
+  departure_time TIMESTAMP(0),
+  arrival_time TIMESTAMP(0),
   fstatus VARCHAR2(10),
   estimated_time NUMBER(4),
   price NUMBER(5, 2),
