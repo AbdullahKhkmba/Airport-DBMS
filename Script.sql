@@ -31,6 +31,7 @@ CREATE TABLE Flight (
   arrival_time DATE,
   fstatus VARCHAR2(10),
   estimated_time NUMBER(4),
+  price NUMBER(5, 3),
   AID_origin VARCHAR2(4) REFERENCES Airport(AID),
   AID_destination VARCHAR2(4) REFERENCES Airport(AID),
   ArID VARCHAR2(12) REFERENCES Aircraft(ArID)
@@ -53,7 +54,6 @@ CREATE TABLE Book(
     nationality VARCHAR2(20),
     passport_no VARCHAR2(20),
     FID VARCHAR2(20) REFERENCES Flight(FID),
-    price NUMBER(5, 3),
     fare_class VARCHAR2(1),
     seat_number VARCHAR2(4),
     PRIMARY KEY (nationality, passport_no, FID),
