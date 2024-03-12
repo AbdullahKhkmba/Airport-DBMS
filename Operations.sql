@@ -30,6 +30,9 @@ WHERE T1.nationality = T2.nationality
 --List all flights from airport X to airport Y ordered by price, number of stops or estimated time (journeys are included even if there is no direct flight from X to Y).
 -- TODO
 
+--Book a flight for a passenger given the flightID and the seat number.
+-- TODO
+
 -- Count number of empty seats on a flight
 SELECT economy_class_capacity + first_class_capacity - (SELECT COUNT(FID) FROM Book WHERE FID = 'F1') AS Number_of_empty_seats
 FROM Aircraft WHERE ArID = (SElECT ArID from flight where FID = 'F1');
