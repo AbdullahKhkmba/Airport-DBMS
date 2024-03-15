@@ -28,7 +28,34 @@ WHERE T1.nationality = T2.nationality
 -- TODO
 
 --List all flights from airport X to airport Y ordered by price, number of stops or estimated time (journeys are included even if there is no direct flight from X to Y).
--- TODO
+
+-- checkpoint (lists all paths from the first origin 'A1' to the final destination 'A3' and shows the total price and orders
+-- by the total price and checks that each flight has at least 1 hour gap between and at most 16 hour gap between).
+SELECT first.FID, second.FID, third.FID,
+	first.price, second.price, third.price,
+	first.price + NVL(second.price, 0) + NVL(third.price, 0) AS total_price
+FROM flight first
+LEFT JOIN flight second ON first.AID_destination = second.AID_origin AND first.AID_destination != 'A3'
+	AND first.arrival_time + INTERVAL '1' HOUR <= second.departure_time
+	AND second.departure_time - first.arrival_time <= INTERVAL '16' HOUR
+LEFT JOIN flight third ON second.AID_destination = third.AID_origin AND second.AID_destination != 'A3'
+	AND second.arrival_time + INTERVAL '1' HOUR <= third.departure_time
+	AND third.departure_time - second.arrival_time <= INTERVAL '16' HOUR
+WHERE first.AID_origin = 'A1' AND (first.AID_destination = 'A3' OR second.AID_destination = 'A3' OR third.AID_destination = 'A3')
+ORDER BY total_price;
+/*
+NVL stands for NULL value logic
+syntax: NVL(expression1, expression2)
+expression1: The column or expression to be evaluated.
+expression2: The value to be returned if expression1 is NULL.
+NVL checks if expression1 is NULL.
+If expression1 is NULL, it returns the value specified in expression2.
+If expression1 has a valid value, NVL simply returns that value itself.
+
+The INTERVAL keyword is used to define a date and time literal.
+syntax: INTERVAL 'value' unit(YEAR, HOUR, ..)
+*/
+
 
 --Book a flight for a passenger given the flightID and the seat number.
 -- TODO
