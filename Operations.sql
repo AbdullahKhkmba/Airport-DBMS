@@ -31,9 +31,7 @@ WHERE T1.nationality = T2.nationality
 
 -- checkpoint (lists all paths from the first origin 'A1' to the final destination 'A3' and shows the total price and orders
 -- by the total price and checks that each flight has at least 1 hour gap between and at most 16 hour gap between).
-SELECT first.FID, second.FID, third.FID,
-	first.price, second.price, third.price,
-	first.price + NVL(second.price, 0) + NVL(third.price, 0) AS total_price
+SELECT first.FID, second.FID, third.FID, first.price + NVL(second.price, 0) + NVL(third.price, 0) AS total_price
 FROM flight first
 LEFT JOIN flight second ON first.AID_destination = second.AID_origin AND first.AID_destination != 'A3'
 	AND first.arrival_time + INTERVAL '1' HOUR <= second.departure_time
