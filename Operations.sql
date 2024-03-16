@@ -24,6 +24,11 @@ WHERE T1.nationality = T2.nationality
     AND T3.departure_time BETWEEN '10-march-2024 01:00:00 AM' AND '16-march-2024 11:59:00 PM'
     AND T3.arrival_time BETWEEN '10-march-2024 01:00:00 AM' AND '16-march-2024 11:59:00 PM';
 
+
+-- count the number of empty seats in first class of a flight using flight ID (here we count empty seats in flight with ID = F1).
+-- We might want make this into a function to use it in checking in other commands.
+SELECT first_class_capacity - (SELECT COUNT(*) FROM book WHERE FID = 'F1' AND fare_class = 'F') AS empty_seats_# FROM aircraft, flight WHERE FID = 'F1' AND flight.ArID = aircraft.ArID;
+
 --List seat numbers of empty economy or first-class seats on a flight.
 -- TODO
 
