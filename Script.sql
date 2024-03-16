@@ -29,7 +29,7 @@ CREATE TABLE Flight (
   FID VARCHAR2(20) PRIMARY KEY,
   departure_time TIMESTAMP(0),
   arrival_time TIMESTAMP(0),
-  fstatus VARCHAR2(10),    -- Scheduled, departure, arrived or cancelled.
+  fstatus VARCHAR2(10),    -- Scheduled, Departured, Arrived or Cancelled.    -- consider making it a single letter.
   estimated_time NUMBER(4),
   price NUMBER(5, 2),
   AID_origin VARCHAR2(4) REFERENCES Airport(AID),
