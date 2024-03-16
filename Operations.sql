@@ -81,3 +81,6 @@ FROM Flight
 WHERE ArID = 'Ar1'
     AND departure_time BETWEEN '10-march-2024 01:00:00 AM' AND '16-march-2024 11:59:00 PM'
     AND arrival_time BETWEEN '10-march-2024 01:00:00 AM' AND '16-march-2024 11:59:00 PM';
+
+-- list all flights with names of airports origin and destination and price and depature and arrival times.
+SELECT t1.airport_name, t3.airport_name, t2.departure_time, t2.arrival_time, t2.price FROM airport t1, flight t2, airport t3 WHERE t2.AID_origin = t1.AID AND t2.AID_destination = t3.AID;
