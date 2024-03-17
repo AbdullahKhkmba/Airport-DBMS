@@ -30,7 +30,7 @@ WHERE T1.nationality = T2.nationality
 SELECT first_class_capacity - (SELECT COUNT(*) FROM book WHERE FID = 'F1' AND fare_class = 'F') AS empty_seats FROM aircraft, flight WHERE FID = 'F1' AND flight.ArID = aircraft.ArID;
 
 --List seat numbers of empty economy or first-class seats on a flight.
--- TODO
+-- TODO: A table with a single column that contains empty seats is required.
 
 --List all flights from airport X to airport Y ordered by price, number of stops or estimated time (journeys are included even if there is no direct flight from X to Y).
 
@@ -66,7 +66,7 @@ syntax: INTERVAL 'value' unit(YEAR, HOUR, ..)
 */
 
 
---Book a flight for a passenger given the flightID and the seat number.
+--Book a flight for a passenger given the flightID and the seat number and do the required checking.
 -- TODO
 
 -- Count number of empty seats on a flight
