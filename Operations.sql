@@ -50,7 +50,7 @@ LEFT JOIN flight third ON second.AID_destination = third.AID_origin AND second.A
 	AND third.fstatus = 'Scheduled'
 	--TODO add checking that number of empty seats is greater than zero
 WHERE first.AID_origin = 'A1' AND (first.AID_destination = 'A3' OR second.AID_destination = 'A3' OR third.AID_destination = 'A3')
-	AND first.fstatus = 'Scheduled' --TODO add checking that number of empty seats is greater than zero using functions
+	AND first.fstatus = 'Scheduled' --TODO add checking that number of empty seats is greater than zero
 ORDER BY total_price;
 /*
 NVL stands for NULL value logic
