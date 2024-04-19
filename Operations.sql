@@ -43,12 +43,12 @@ LEFT JOIN flight second ON first.AID_destination = second.AID_origin AND first.A
 	AND first.arrival_time + INTERVAL '1' HOUR <= second.departure_time
 	AND second.departure_time - first.arrival_time <= INTERVAL '16' HOUR
 	AND second.fstatus = 'Scheduled'
-	--TODO add checking that number of empty seats is greater than zero using functions
+	--TODO add checking that number of empty seats is greater than zero
 LEFT JOIN flight third ON second.AID_destination = third.AID_origin AND second.AID_destination != 'A3'
 	AND second.arrival_time + INTERVAL '1' HOUR <= third.departure_time
 	AND third.departure_time - second.arrival_time <= INTERVAL '16' HOUR
 	AND third.fstatus = 'Scheduled'
-	--TODO add checking that number of empty seats is greater than zero using functions
+	--TODO add checking that number of empty seats is greater than zero
 WHERE first.AID_origin = 'A1' AND (first.AID_destination = 'A3' OR second.AID_destination = 'A3' OR third.AID_destination = 'A3')
 	AND first.fstatus = 'Scheduled' --TODO add checking that number of empty seats is greater than zero using functions
 ORDER BY total_price;
